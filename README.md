@@ -1,29 +1,61 @@
-This repository is the implementation of "Bypassing the Ambient Dimension: Private SGD with Gradient Subspace Identification".
+# Bypassing the Ambient Dimension: Private SGD with Gradient Subspace Identification
 
-The implementation is in python.
+Official implementation of the paper **“Bypassing the Ambient Dimension: Private SGD with Gradient Subspace Identification.”**
 
-The folder 'fashion-mnist-cnn' includes the code for Fashion MNIST experiment.
-run_nn_fmnist_sgd_proj.py is the main file.
+## Overview
 
-You can run the DPD-SGD by the command:
+This repository contains the Python implementation of the proposed DPD-SGD algorithm with gradient subspace identification. Experiments are provided for both MNIST and Fashion-MNIST datasets.
 
-python3 run_nn_fmnist_sgd_proj.py  --stdev 18 --batch-size  250 --lr 0.01 --micro-size 5 --proj-dim 70 --num-valid 100 --proj-epoch 15
+## Running Experiments
 
-The folder 'mnist-cnn' includes the code for the MNIST experiment.
-run_nn_mnist_sgd_proj.py is the main file.
+### Fashion-MNIST
 
-python3 run_nn_mnist_sgd_proj.py  --stdev 14 --batch-size  250 --lr 0.2 --micro-size 1 --proj-dim 50 --num-valid 100 --proj-epoch 0
+Main file:
+```
+fashion-mnist-cnn/run_nn_fmnist_sgd_proj.py
+```
 
-Parameters:
+Run DPD-SGD with:
 
-'--stdev': noise variance
+```bash
+python3 run_nn_fmnist_sgd_proj.py \
+    --stdev 18 \
+    --batch-size 250 \
+    --lr 0.01 \
+    --micro-size 5 \
+    --proj-dim 70 \
+    --num-valid 100 \
+    --proj-epoch 15
+```
 
-'--batch-size': batch size
+### MNIST
 
-'--lr': learning rate
+Main file:
+```
+mnist-cnn/run_nn_mnist_sgd_proj.py
+```
 
-'proj-dim': projection dimension, i.e., k in the DPD-SGD
+Run DPD-SGD with:
 
-'--num-valid': public dataset size
+```bash
+python3 run_nn_mnist_sgd_proj.py \
+    --stdev 14 \
+    --batch-size 250 \
+    --lr 0.2 \
+    --micro-size 1 \
+    --proj-dim 50 \
+    --num-valid 100 \
+    --proj-epoch 0
+```
 
-' --proj-epoch': number of epochs to start projection
+## Parameter Description
+
+- `--stdev`: Standard deviation of Gaussian noise  
+- `--batch-size`: Training batch size  
+- `--lr`: Learning rate  
+- `--micro-size`: Micro-batch size  
+- `--proj-dim`: Projection dimension (k in DPD-SGD)  
+- `--num-valid`: Size of the public validation dataset  
+- `--proj-epoch`: Epoch number to start projection  
+
+
