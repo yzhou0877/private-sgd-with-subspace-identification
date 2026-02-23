@@ -6,6 +6,14 @@ Official implementation of the paper **“Bypassing the Ambient Dimension: Priva
 
 This repository contains the Python implementation of the proposed DPD-SGD algorithm with gradient subspace identification. Experiments are provided for both MNIST and Fashion-MNIST datasets.
 
+## Environment Setup
+
+Create a virtual environment using:
+
+```bash
+conda env create -f environment.yml
+```
+
 ## Running Experiments
 
 ### Fashion-MNIST
